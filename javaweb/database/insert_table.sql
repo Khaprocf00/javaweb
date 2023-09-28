@@ -1,0 +1,1 @@
+INSERT category (NAME,code) VALUES("Women","wo"),("Men","me"),("Footwear","fo"),("Jewelry","je"),("Lady","la");
