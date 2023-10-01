@@ -10,37 +10,51 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import javaweb.constant.SystemConstant;
-import javaweb.service.ICategoryService;
+import javaweb.model.UserModel;
+import javaweb.service.IUserService;
+import javaweb.utils.FormUtil;
+import javaweb.utils.SessionUtil;
 
-@WebServlet(urlPatterns = { "/trang-chu" })
+@WebServlet(urlPatterns = { "/trang-chu", "/dang-nhap","/thoat" })
 public class HomeController extends HttpServlet {
 
 	@Inject
-	private ICategoryService categoryService;
-
+	private IUserService userService;
+	
 	private static final long serialVersionUID = -6175189361695152199L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		CategoryModel category = new CategoryModel();
-//		category.setCode("the-man");
-//		category.setName("the man");
-//		Long id = categoryService.insert(category);
-//		System.out.println(id);
+		String action = req.getParameter("action");
+		if(action != null && action.equals("login")) {
+			RequestDispatcher rd = req.getRequestDispatcher("/views/login/login.jsp");
+			rd.forward(req, resp);
+		}else if(action != null && action.equals("logout")) {
+			SessionUtil.getInstance().removeValue(req, "USERMODEL");
+			resp.sendRedirect(req.getContextPath()+"/trang-chu");
+		}else {
+			RequestDispatcher rd = req.getRequestDispatcher("/views/user/index.jsp");
+			rd.forward(req, resp);
+		}
+	}
 
-//		CategoryModel category = new CategoryModel();
-//		category.setCode("the-girl");
-//		category.setName("the man girl");
-//		Long id = 8L;
-//		categoryService.update(category, id);
-
-		
-//		Long[] ids = { 6L, 7L, 8L };
-//		categoryService.delete(ids);
-		
-		req.setAttribute(SystemConstant.MODEL, categoryService.findAll());
-		RequestDispatcher rd = req.getRequestDispatcher("/views/user/index.jsp");
-		rd.forward(req, resp);
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String action = req.getParameter("action");
+		if (action != null && action.equals("login")) {
+			UserModel model = FormUtil.toModel(UserModel.class, req);
+			model = userService.findUserAndPasswordAndStatus(model.getUsername(), model.getPassword(), 1);
+			if(model!=null) {
+				SessionUtil.getInstance().putValue(req, "USERMODEL", model);;
+				if(model.getRole().getCode().equals("user")) {
+					resp.sendRedirect(req.getContextPath()+"/trang-chu");
+				}
+				else if(model.getRole().getCode().equals("admin")) {
+					resp.sendRedirect(req.getContextPath()+"/admin");
+				}
+			}else {
+				resp.sendRedirect(req.getContextPath()+"/dang-nhap?action=login");
+			}
+		}
 	}
 }

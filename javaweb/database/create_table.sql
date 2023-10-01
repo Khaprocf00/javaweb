@@ -101,7 +101,18 @@ CREATE TABLE size(
 	createby VARCHAR(255) NULL,
 	modifiedby VARCHAR(255) NULL
 );
-
+CREATE TABLE user(
+	id BIGINT NOT NULL PRIMARY KEY auto_increment,
+	email  VARCHAR(255) NOT NULL, 
+	username  VARCHAR(255) NOT NULL, 
+	password  VARCHAR(255) NOT NULL, 
+	role_id BIGINT not null ,
+	createddate TIMESTAMP NULL,
+	modifieddate TIMESTAMP NULL,
+	createby VARCHAR(255) NULL,
+	modifiedby VARCHAR(255) NULL
+);
+ALTER TABLE image ADD CONSTRAINT fk_user_role FOREIGN KEY (role_id) REFERENCES role(id);
 --add foreign key
 ALTER TABLE image ADD CONSTRAINT fk_image_product FOREIGN KEY (product_id) REFERENCES product(id);
 ALTER TABLE product ADD CONSTRAINT fk_product_category FOREIGN KEY (category_id) REFERENCES category(id);

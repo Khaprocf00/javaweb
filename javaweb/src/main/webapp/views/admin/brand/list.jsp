@@ -21,7 +21,9 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0">Home</h1>
+					<h1 class="m-0">
+						<a href="<c:url value='/admin-brand'/>">Brand</a>
+					</h1>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
@@ -39,8 +41,7 @@
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<form action="<c:url value='/admin-category-list'/>" method="get"
-		id="formSubmit">
+	<form action="<c:url value='/admin-brand'/>" method="get" id="formSubmit">
 		<section class="content">
 			<section class="ftco-section">
 				<div class="container">
@@ -52,7 +53,6 @@
 										<tr>
 											<th>&nbsp;</th>
 											<th>Name</th>
-											<th>Code</th>
 											<th>&nbsp;</th>
 										</tr>
 									</thead>
@@ -64,12 +64,20 @@
 														class="checkmark"></span>
 												</label></td>
 												<td>${item.name}</td>
-												<td>${item.code}</td>
-												<td>
-													<button type="button" class="close" data-dismiss="alert"
-														aria-label="Close">
-														<span aria-hidden="true"><i class="fa fa-close"></i></span>
-													</button>
+
+												<td class="d-flex flex-row-reverse">
+													<a href="<c:url value='/admin-brand?action=delete&id=${item.id}'/>" >
+														<button type="button" class="btn btn-danger" >
+															<span aria-hidden="true"><i class="fa fa-close"></i></span>
+														</button>
+													</a>
+													<a href="<c:url value='/admin-brand?action=edit&id=${item.id}' />">
+														<button type="button" class="btn btn-primary mr-2" >
+															<span aria-hidden="true"><i
+																class="fa-solid fa-pen-to-square"></i></span>
+														</button>
+													</a>
+													
 												</td>
 											</tr>
 										</c:forEach>
@@ -80,8 +88,8 @@
 									<ul class="pagination" id="pagination"></ul>
 									<input type="hidden" value="" name="page" id="page" /> <input
 										type="hidden" value="" name="maxPageItem" id="maxPageItem" />
-										<input type="hidden" value="" name="sortName" id="sortName">
-										<input type="hidden" value="" name="sortBy" id="sortBy">
+									<input type="hidden" value="" name="sortName" id="sortName">
+									<input type="hidden" value="" name="sortBy" id="sortBy">
 								</div>
 							</div>
 						</div>
@@ -90,12 +98,12 @@
 			</section>
 		</section>
 	</form>
-	 <script type="text/javascript">
-			var currentPage = ${model.page};
-			var totalPage = ${model.totalPage};
-			var limit = ${model.maxPageItem};
-			var sortName = "${model.sortName}";
-			var sortBy = "${model.sortBy}";
+	<script type="text/javascript">
+		var currentPage = ${model.page};
+		var totalPage = ${model.totalPage};
+		var limit = ${model.maxPageItem};
+		var sortName = "${model.sortName}";
+		var sortBy = "${model.sortBy}";
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({
 				totalPages : totalPage,
@@ -112,7 +120,7 @@
 				}
 			});
 		});
-	</script> 
+	</script>
 
 </body>
 </html>

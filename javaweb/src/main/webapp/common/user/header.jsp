@@ -34,7 +34,13 @@
 						<li><a href="my-account.html" title="My account">My
 								account</a></li>
 						<li><a href="cart.html" title="My cart">My cart</a></li>
-						<li><a href="login.html" title="Login">Login</a></li>
+						<c:if test="${not empty USERMODEL}">
+							<li><a href="<c:url value = '/login'/> " title="Login" >welcome, ${USERMODEL.fullname} </a ></li>
+							<li><a href="<c:url value = '/thoat?action=logout'/> " title="Login" >Thoat</a ></li>
+						</c:if>
+						<c:if test="${empty USERMODEL}">
+							<li><a href="<c:url value = '/dang-nhap?action=login'/> " title="Login" >Login</a ></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>

@@ -2,10 +2,12 @@ package javaweb.model;
 
 public class UserModel extends BaseModel<UserModel>{
 	private String username;
+	private String email;
 	private String password;
 	private String fullname;
 	private int status;
 	private Long roleId;
+	private RoleModel role = new RoleModel();
 	public String getFullname() {
 		return fullname;
 	}
@@ -35,6 +37,18 @@ public class UserModel extends BaseModel<UserModel>{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public RoleModel getRole() {
+		return role;
+	}
+	public void setRole(RoleModel role) {
+		this.role = role;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

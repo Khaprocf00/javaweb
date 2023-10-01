@@ -49,8 +49,11 @@
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>	
-	
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 	<div class="wrapper">
@@ -78,14 +81,14 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
-
+			
 			<dec:body />
 			<!-- /.content -->
 		</div>
 		<!-- /.content-wrapper -->
 
 		<!-- footer -->
-		<%@include file="/common/admin/header.jsp"%>
+		<%@include file="/common/admin/footer.jsp"%>
 		<!-- /.footer -->
 
 
@@ -96,29 +99,47 @@
 		<!-- /.control-sidebar -->
 	</div>
 
-	<script src="<c:url value='template/admin/plugins/jquery/jquery.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/jquery-ui/jquery-ui.min.js'/> "></script>
-	<script> $.widget.bridge('uibutton', $.ui.button) </script>
-	<script src="<c:url value='template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/chart.js/Chart.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/sparklines/sparkline.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/jqvmap/jquery.vmap.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/jqvmap/maps/jquery.vmap.usa.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/jquery-knob/jquery.knob.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/moment/moment.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/daterangepicker/daterangepicker.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/summernote/summernote-bs4.min.js'/> "></script>
-	<script src="<c:url value='template/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/jquery/jquery.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/jquery-ui/jquery-ui.min.js'/> "></script>
+	<script>
+		$.widget.bridge('uibutton', $.ui.button)
+	</script>
+	<script
+		src="<c:url value='template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/chart.js/Chart.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/sparklines/sparkline.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/jqvmap/jquery.vmap.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/jqvmap/maps/jquery.vmap.usa.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/jquery-knob/jquery.knob.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/moment/moment.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/daterangepicker/daterangepicker.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/summernote/summernote-bs4.min.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js'/> "></script>
 	<script src="<c:url value='template/admin/dist/js/adminlte.js'/> "></script>
 	<script src="<c:url value='template/admin/dist/js/demo.js'/> "></script>
-	<script src="<c:url value='template/admin/dist/js/pages/dashboard.js'/> "></script>
+	<script
+		src="<c:url value='template/admin/dist/js/pages/dashboard.js'/> "></script>
 	<script src="<c:url value = 'template/table/js/jquery.min.js'/>"></script>
 	<script src="<c:url value = 'template/table/js/popper.js'/>"></script>
 	<script src="<c:url value = 'template/table/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value = 'template/table/js/main.js'/>"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="<c:url value = 'template/paging/jquery.twbsPagination.js'/>"  type="text/javascript"></script>
+	<script
+		src="<c:url value = 'template/paging/jquery.twbsPagination.js'/>"
+		type="text/javascript"></script>
 </body>
 
 </html>

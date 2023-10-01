@@ -18,7 +18,7 @@ import javaweb.service.ICategoryService;
 import javaweb.sort.Sorter;
 import javaweb.utils.FormUtil;
 
-@WebServlet(urlPatterns = { "/admin-new-list" })
+@WebServlet(urlPatterns = { "/admin-category-list" })
 public class CategoryController extends HttpServlet {
 	private static final long serialVersionUID = 5911958491447160991L;
 

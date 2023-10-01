@@ -13,11 +13,11 @@ public class BaseModel<T> {
 	private Long[] ids;
 	private List<T> listResult = new ArrayList<>();
 	private Integer page = 1;
-	private Integer maxPageItem = 5;
+	private Integer maxPageItem = 4;
 	private Integer totalPage;
 	private Integer totalItem;
-	private String sortName;
-	private String sortBy;
+	private String sortName = "name";
+	private String sortBy = "DESC";
 	public String getSortName() {
 		return sortName;
 	}
@@ -64,8 +64,8 @@ public class BaseModel<T> {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public void setListResult(List<T> listResult) {
-		this.listResult = listResult;
+	public void setListResult(List<T> list) {
+		this.listResult = list;
 	}
 	public Date getCreatedDate() {
 		return createdDate;

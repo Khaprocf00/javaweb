@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class ColorModel {
+public class ColorModel extends BaseModel<ColorModel>{
 	private String name;
 	private String code;
 	public String getName() {
