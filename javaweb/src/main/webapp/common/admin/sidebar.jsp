@@ -36,11 +36,11 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item"><a
-                            href="<c:url value = '/admin-category-list?page=1&maxPageItem=3&sortName=name&sortBy=desc'/>"
+                            href="<c:url value = '/admin-category?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
                             class="nav-link active"> <i class="far fa-circle nav-icon"></i>
                             <p>List Category</p>
                         </a></li>
-                    <li class="nav-item"><a href="./index2.html" class="nav-link">
+                    <li class="nav-item"><a href="<c:url value = '/admin-category?action=insert'/>" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Category</p>
                         </a></li>

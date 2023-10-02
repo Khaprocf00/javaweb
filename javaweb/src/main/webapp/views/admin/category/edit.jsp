@@ -12,7 +12,9 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0"><a href="<c:url value='/admin-category'/>">Category</a></h1>
+					<h1 class="m-0">
+						<a href="<c:url value='/admin-category'/>">Category</a>
+					</h1>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
@@ -31,7 +33,7 @@
 
 	<!-- Main content -->
 	<div class="container">
-		<form action="" method="post" id="formSubmit">
+		<form action="" method="POST" id="formSubmit">
 			<!-- <div class="form-group">
 				<label for="exampleInputEmail1">Email address</label> <input name="email"
 					type="email" class="form-control" id="exampleInputEmail1"
@@ -40,17 +42,15 @@
 					share your email with anyone else.</small>
 			</div> -->
 			<div class="form-group">
-				<label for="name">Name Category</label> <input type="text" name="name"
-					value="<c:if test='${category != null}'>${category.name}</c:if>"
-					class="form-control" id="name" placeholder="Enter name brand">
-				
-
+				<label for="name">Name Category</label> <input type="text"
+					name="name" value="${model.name}" class="form-control" id="name"
+					placeholder="Enter name brand">
 			</div>
 			<div class="form-group">
-				<label for="code">Code Category</label> <input type="text" name="code"
-					value="<c:if test='${category != null}'>${category.code}</c:if>"
-					class="form-control" id="code" placeholder="Enter name brand">
-
+				<label for="code">Code Category</label> <input type="text"
+					name="code" value="${model.code}" class="form-control" id="code"
+					placeholder="Enter name brand">
+				<input type="hidden" value="${model.id}" name="id">
 			</div>
 			<!-- <div class="form-group">
 				<label for="password">Password</label> <input type="password" name="password"
@@ -67,13 +67,14 @@
 			</div> -->
 
 
-			<button type="submit" class="btn btn-primary">Add</button>
-			<c:if test="${checkName == false}">
-					<div class="alert alert-danger" role="alert">Brand này đã có
-						rồi !</div>
+			<button type="submit" class="btn btn-primary">Update</button>
+			
+			<c:if test="${check == false}">
+					<div class="alert alert-danger mt-2" role="alert">Name "${Category.name}" hoặc Code "${Category.code}"
+						này đã có rồi !</div>
 				</c:if>
-				<c:if test="${checkName == true}">
-					<div class="alert alert-success" role="alert">Đã thêm thành công brand " ${oldName} "</div>
+				<c:if test="${check == true}">
+					<div class="alert alert-success mt-2" role="alert">Edit thành công</div>
 				</c:if>
 		</form>
 	</div>

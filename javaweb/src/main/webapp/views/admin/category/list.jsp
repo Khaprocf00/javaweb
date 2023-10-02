@@ -21,7 +21,7 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0">Home</h1>
+					<h1 class="m-0"><a href="<c:url value='/admin-category'/>">Category</a></h1>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
@@ -39,7 +39,7 @@
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<form action="<c:url value='/admin-category-list'/>" method="get"
+	<form action="<c:url value='/admin-category'/>" method="get"
 		id="formSubmit">
 		<section class="content">
 			<section class="ftco-section">
@@ -66,10 +66,17 @@
 												<td>${item.name}</td>
 												<td>${item.code}</td>
 												<td>
-													<button type="button" class="close" data-dismiss="alert"
-														aria-label="Close">
-														<span aria-hidden="true"><i class="fa fa-close"></i></span>
-													</button>
+													<a href="<c:url value='/admin-category?action=delete&id=${item.id}'/>" >
+														<button type="button" class="btn btn-danger" >
+															<span aria-hidden="true"><i class="fa fa-close"></i></span>
+														</button>
+													</a>
+													<a href="<c:url value='/admin-category?action=edit&id=${item.id}' />">
+														<button type="button" class="btn btn-primary mr-2" >
+															<span aria-hidden="true"><i
+																class="fa-solid fa-pen-to-square"></i></span>
+														</button>
+													</a>
 												</td>
 											</tr>
 										</c:forEach>

@@ -56,4 +56,24 @@ public class CategoryDAO extends AbstractDAO<CategoryModel> implements ICategory
 		return count(sql);
 	}
 
+	@Override
+	public boolean checkName(String name) {
+		String sql = "select count(*) from category where name = ?";
+		if (count(sql, name) != 0)
+			return false;
+		return true;
+	}
+
+	@Override
+	public CategoryModel findById(Long id) {
+		String sql = "select * from category where id = ?";
+		List<CategoryModel> list = query(sql, new CategoryMapper(), id);
+		return list.isEmpty() ? null : list.get(0);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		String sql = "delete from category where id = ? ";
+		update(sql, id);
+	}
 }

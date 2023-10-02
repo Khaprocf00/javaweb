@@ -42,5 +42,21 @@ public class CategoryService implements ICategoryService{
 	public int totalItemInTable() {
 		return categoryDAO.totalItemInTable();
 	}
+
+	@Override
+	public boolean checkName(String name) {
+		return categoryDAO.checkName(name);
+	}
+
+	@Override
+	public CategoryModel findById(Long id) {
+		return categoryDAO.findById(id);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		categoryDAO.deleteById(id);
+		
+	}
 	
 }

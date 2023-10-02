@@ -9,7 +9,7 @@
 <body>
 	<div class="form-structor">
 		<form action="">
-			<div class="signup">
+			<div class="signup slide-up">
 				<h2 class="form-title" id="signup">
 					<span>or</span>Sign up
 				</h2>
@@ -22,7 +22,7 @@
 			</div>
 		</form>
 		<form action="" method="POST">
-			<div class="login slide-up">
+			<div class="login ">
 				<div class="center">
 					<h2 class="form-title" id="login">
 						<span>or</span>Log in
@@ -32,7 +32,9 @@
 							type="password" class="input" placeholder="Password" name = "password"/>
 					</div>
 					<button type="submit" class="submit-btn">Log in</button>
+					<div class="alert alert-${alert}" role="alert">${message}</div>
 				</div>
+				
 			</div>
 		</form>
 	</div>

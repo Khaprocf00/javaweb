@@ -1,6 +1,7 @@
 package javaweb.controller.user;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -18,6 +19,8 @@ import javaweb.utils.SessionUtil;
 @WebServlet(urlPatterns = { "/trang-chu", "/dang-nhap","/thoat" })
 public class HomeController extends HttpServlet {
 
+	ResourceBundle mybundle = ResourceBundle.getBundle("message");
+	
 	@Inject
 	private IUserService userService;
 	
@@ -27,6 +30,12 @@ public class HomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String action = req.getParameter("action");
 		if(action != null && action.equals("login")) {
+			String message = req.getParameter("message");
+			String alert = req.getParameter("alert");
+			if(alert!=null && message!=null) {
+				req.setAttribute("alert", alert);
+				req.setAttribute("message", mybundle.getString(message));
+			}
 			RequestDispatcher rd = req.getRequestDispatcher("/views/login/login.jsp");
 			rd.forward(req, resp);
 		}else if(action != null && action.equals("logout")) {
@@ -53,7 +62,7 @@ public class HomeController extends HttpServlet {
 					resp.sendRedirect(req.getContextPath()+"/admin");
 				}
 			}else {
-				resp.sendRedirect(req.getContextPath()+"/dang-nhap?action=login");
+				resp.sendRedirect(req.getContextPath()+"/dang-nhap?action=login&message=user_pass_invalid&alert=danger");
 			}
 		}
 	}

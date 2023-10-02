@@ -13,4 +13,7 @@ public interface ICategoryDAO extends GenericDAO<CategoryModel>{
 	void Delete(Long[] ids);
 	List<CategoryModel> findAllPage(Pageble pageble);
 	int totalItemInTable();
+	boolean checkName(String name);
+	CategoryModel findById(Long id);
+	void deleteById(Long id);
 }

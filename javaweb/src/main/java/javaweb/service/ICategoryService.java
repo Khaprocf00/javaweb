@@ -12,4 +12,7 @@ public interface ICategoryService {
 	void delete(Long[] ids);
 	List<CategoryModel> findAllPage(Pageble pageble);
 	int totalItemInTable();
+	boolean checkName(String name);
+	CategoryModel findById(Long id);
+	void deleteById(Long id);
 }
