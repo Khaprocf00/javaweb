@@ -12,7 +12,7 @@ import javaweb.service.ICategoryService;
 public class CategoryService implements ICategoryService{
 	@Inject
 	private ICategoryDAO categoryDAO;
-	
+
 	@Override
 	public List<CategoryModel> findAll() {
 		return categoryDAO.findAll();
@@ -25,12 +25,12 @@ public class CategoryService implements ICategoryService{
 
 	@Override
 	public void update(CategoryModel category, Long id) {
-		categoryDAO.Update(category, id);
+		categoryDAO.update(category, id);
 	}
 
 	@Override
 	public void delete(Long[] ids) {
-		categoryDAO.Delete(ids);
+		categoryDAO.delete(ids);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class CategoryService implements ICategoryService{
 	@Override
 	public void deleteById(Long id) {
 		categoryDAO.deleteById(id);
-		
+
 	}
 	
 }

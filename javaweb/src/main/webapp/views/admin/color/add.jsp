@@ -12,12 +12,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0"><a href="<c:url value='/admin-category'/>">Category</a></h1>
+					<h1 class="m-0"><a href="<c:url value='/admin-color'/>">Color</a></h1>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="#">Category</a></li>
+						<li class="breadcrumb-item"><a href="#">Color</a></li>
 						<li class="breadcrumb-item active">Add</li>
 					</ol>
 				</div>
@@ -40,16 +40,16 @@
 					share your email with anyone else.</small>
 			</div> -->
 			<div class="form-group">
-				<label for="name">Name Category</label> <input type="text" name="name"
-					value="<c:if test='${category != null}'>${category.name}</c:if>"
-					class="form-control" id="name" placeholder="Enter name brand">
+				<label for="name">Name Color</label> <input type="text" name="name"
+					value="<c:if test='${color != null}'>${color.name}</c:if>"
+					class="form-control" id="name" placeholder="Enter name color">
 				
 
 			</div>
 			<div class="form-group">
-				<label for="code">Code Category</label> <input type="text" name="code"
-					value="<c:if test='${category != null}'>${category.code}</c:if>"
-					class="form-control" id="code" placeholder="Enter name brand">
+				<label for="code">Code Color</label> <input type="text" name="code"
+					value="<c:if test='${color != null}'>${color.code}</c:if>"
+					class="form-control" id="code" placeholder="Enter code color">
 
 			</div>
 			<!-- <div class="form-group">
@@ -69,11 +69,11 @@
 
 			<button type="submit" class="btn btn-primary">Add</button>
 			<c:if test="${checkName == false}">
-					<div class="alert alert-danger" role="alert">Brand này đã có
+					<div class="alert alert-danger" role="alert">Color này đã có
 						rồi !</div>
 				</c:if>
 				<c:if test="${checkName == true}">
-					<div class="alert alert-success" role="alert">Đã thêm thành công Category " ${category.name} "</div>
+					<div class="alert alert-success" role="alert">Đã thêm thành công Color " ${color.name}"</div>
 				</c:if>
 		</form>
 	</div>

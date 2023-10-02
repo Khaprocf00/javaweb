@@ -9,8 +9,8 @@ import javaweb.paging.Pageble;
 public interface ICategoryDAO extends GenericDAO<CategoryModel>{
 	List<CategoryModel> findAll();
 	Long insert(CategoryModel category);
-	void Update(CategoryModel category, Long id);
-	void Delete(Long[] ids);
+	void update(CategoryModel category, Long id);
+	void delete(Long[] ids);
 	List<CategoryModel> findAllPage(Pageble pageble);
 	int totalItemInTable();
 	boolean checkName(String name);

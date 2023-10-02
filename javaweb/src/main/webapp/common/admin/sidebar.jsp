@@ -65,6 +65,24 @@
 
                 </ul>
             </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Color <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-color?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Color</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-color?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Color</p>
+                        </a></li>
+
+                </ul>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

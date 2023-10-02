@@ -15,9 +15,9 @@ public class ColorDAO extends AbstractDAO<ColorModel> implements IColorDAO{
 	}
 
 	@Override
-	public void update(ColorModel color) {
-		String sql= "update color set name = ? , code = ?";
-		update(sql, color.getName(),color.getCode());
+	public void update(ColorModel color, Long id) {
+		String sql= "update color set name = ? , code = ? where id = ?";
+		update(sql, color.getName(),color.getCode(),id);
 	}
 
 	@Override
@@ -52,4 +52,25 @@ public class ColorDAO extends AbstractDAO<ColorModel> implements IColorDAO{
 		String sql = "select count(*) from color";
 		return count(sql);
 	}
-}
+	@Override
+	public boolean checkName(String name) {
+		String sql = "select count(*) from color where name = ?";
+		if (count(sql, name) != 0)
+			return false;
+		return true;
+	}
+
+	@Override
+	public ColorModel findById(Long id) {
+		String sql = "select * from color where id = ?";
+		List<ColorModel> list = query(sql, new ColorMapper(), id);
+		return list.isEmpty() ? null : list.get(0);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		String sql = "delete from color where id = ? ";
+		update(sql, id);
+	}
+
+}	

@@ -22,13 +22,13 @@ public class CategoryDAO extends AbstractDAO<CategoryModel> implements ICategory
 	}
 
 	@Override
-	public void Update(CategoryModel category, Long id) {
+	public void update(CategoryModel category, Long id) {
 		String sql = "update category set name = ? , code = ? where id = ?";
 		update(sql, category.getName(), category.getCode(), id);
 	}
 
 	@Override
-	public void Delete(Long[] ids) {
+	public void delete(Long[] ids) {
 		String sql = "delete from category where id = ?";
 		for (int i = 0; i < ids.length; i++) {
 			update(sql, ids[i]);
@@ -40,7 +40,7 @@ public class CategoryDAO extends AbstractDAO<CategoryModel> implements ICategory
 		StringBuilder sql = new StringBuilder("select * from category ");
 		if (pageble.getSorter() != null) {
 			sql.append(" order by " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + " ");
-			}
+		}
 		if (pageble.getOffset() != null && pageble.getLimit() != null) {
 			sql.append("limit ?,?");
 			return query(sql.toString(), new CategoryMapper(), pageble.getOffset(), pageble.getLimit());
