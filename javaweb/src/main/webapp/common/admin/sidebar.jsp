@@ -83,6 +83,59 @@
 
                 </ul>
             </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Size <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-size?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Size</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-size?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Size</p>
+                        </a></li>
+                </ul>
+            </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Tag <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-tag?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Tag</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-tag?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Tag</p>
+                        </a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Role <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-role?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Role</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-role?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Role</p>
+                        </a></li>
+
+                </ul>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

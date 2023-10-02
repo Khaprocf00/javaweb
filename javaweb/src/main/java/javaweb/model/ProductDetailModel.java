@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class ProductDetailModel {
+public class ProductDetailModel extends BaseModel<ProductDetailModel>{
 	private Long productId;
 	private Long colorId;
 	private Long sizeId;

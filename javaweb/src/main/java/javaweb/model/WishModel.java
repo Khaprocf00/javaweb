@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class WishModel {
+public class WishModel extends BaseModel<ImageModel>{
 	private Long userId;
 	private Long productId;
 	public Long getUserId() {

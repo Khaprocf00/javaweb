@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class ProductCommentModel {
+public class ProductCommentModel extends BaseModel<ProductCommentModel>{
 	private Long productId;
 	private Long userId;
 	private String message;

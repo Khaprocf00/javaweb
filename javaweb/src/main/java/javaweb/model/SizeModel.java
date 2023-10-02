@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class SizeModel {
+public class SizeModel extends BaseModel<SizeModel> {
 	private String name;
 
 	public String getName() {

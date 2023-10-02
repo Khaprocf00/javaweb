@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class RoleModel {
+public class RoleModel extends BaseModel<RoleModel>{
 	private String name;
 	private String code;
 	public String getName() {

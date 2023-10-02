@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class ImageModel {
+public class ImageModel extends BaseModel<ImageModel>{
 	private Long productId;
 	private String path;
 	public Long getProductId() {

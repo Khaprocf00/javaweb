@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class SliderModel {
+public class SliderModel extends BaseModel<SliderModel>{
 	private String image;
 	private String name;
 	private String content;

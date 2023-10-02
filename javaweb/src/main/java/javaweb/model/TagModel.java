@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class TagModel {
+public class TagModel extends BaseModel<TagModel>{
 	private String name;
 
 	public String getName() {

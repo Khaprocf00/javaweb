@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class ProductModel {
+public class ProductModel extends BaseModel<ProductModel>{
 	private String name;
 	private double price;
 	private double discount;

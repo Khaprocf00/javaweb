@@ -1,6 +1,6 @@
 package javaweb.model;
 
-public class OrderModel {
+public class OrderModel extends BaseModel<OrderModel>{
 	private Long userId;
 	private String firstName;
 	private String lastName;
