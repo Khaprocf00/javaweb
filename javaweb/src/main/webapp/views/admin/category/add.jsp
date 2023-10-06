@@ -42,14 +42,14 @@
 			<div class="form-group">
 				<label for="name">Name Category</label> <input type="text" name="name"
 					value="<c:if test='${category != null}'>${category.name}</c:if>"
-					class="form-control" id="name" placeholder="Enter name brand">
+					class="form-control" id="name" placeholder="Enter name category">
 				
 
 			</div>
 			<div class="form-group">
 				<label for="code">Code Category</label> <input type="text" name="code"
 					value="<c:if test='${category != null}'>${category.code}</c:if>"
-					class="form-control" id="code" placeholder="Enter name brand">
+					class="form-control" id="code" placeholder="Enter code category">
 
 			</div>
 			<!-- <div class="form-group">
