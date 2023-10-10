@@ -12,7 +12,9 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0"><a href="<c:url value='/admin-size'/>">size</a></h1>
+					<h1 class="m-0">
+						<a href="<c:url value='/admin-size'/>">size</a>
+					</h1>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
@@ -48,18 +50,20 @@
 						rồi !</div>
 				</c:if>
 				<c:if test="${checkName == true}">
-					<div class="alert alert-success" role="alert">Đã thêm thành công size " ${oldName} "</div>
+					<div class="alert alert-success" role="alert">Đã thêm thành
+						công size " ${oldName} "</div>
 				</c:if>
 
 			</div>
-			<!-- <div class="form-group">
-				<label for="password">Password</label> <input type="password" name="password"
-					class="form-control" id="password" placeholder="Password">
+			<div class="form-group">
+				<label for="password">Password</label> <input type="text"
+					name="text" class="form-control" id="password"
+					placeholder="Password">
 			</div>
 			<div class="form-group">
-				<label for="role">Role</label> <input type="password" name="password"
-					class="form-control" id="role" placeholder="Role">
-			</div> -->
+				<label for="role">Role</label> <input type="text"
+					name="text" class="form-control" id="role" placeholder="Role">
+			</div>
 			<!-- <div class="form-group form-check">
 				<input type="checkbox" class="form-check-input" id="exampleCheck1">
 				<label class="form-check-label" for="exampleCheck1">Check me

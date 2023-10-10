@@ -12,10 +12,14 @@ public class SizeMapper implements RowMapper<SizeModel> {
 		try {
 			size.setId(resultSet.getLong("id"));
 			size.setName(resultSet.getString("name"));
-			size.setCreatedDate(resultSet.getDate("createddate"));
 			size.setCreatedBy(resultSet.getString("createdby"));
-			size.setModifiedDate(resultSet.getDate("modifieddate"));
-			size.setModifiedBy(resultSet.getString("modifiedby"));
+			size.setCreatedDate(resultSet.getDate("createddate"));
+			if(resultSet.getDate("modifieddate") != null) {
+				size.setModifiedDate(resultSet.getDate("modifieddate"));
+			}
+			if(resultSet.getString("modifiedby") != null) {
+				size.setModifiedBy(resultSet.getString("modifiedby"));
+			}
 			return size;
 		} catch (SQLException e) {
 			System.out.println("Error category mapper");

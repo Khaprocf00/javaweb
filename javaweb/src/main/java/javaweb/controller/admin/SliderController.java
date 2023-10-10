@@ -2,9 +2,6 @@ package javaweb.controller.admin;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -15,12 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUpload;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.tomcat.util.bcel.classfile.Constant;
 
 import javaweb.constant.SystemConstant;
 import javaweb.model.SliderModel;
@@ -123,7 +114,7 @@ public class SliderController extends HttpServlet {
 		if (!uploadDir.exists()) {
 			uploadDir.mkdir();
 		}
-		Part part = req.getPart("image");
+		Part part = req.getPart("imagePath");
 		String fileName = getFileName(part);
 		part.write(uploadPath + File.separator + fileName);
 

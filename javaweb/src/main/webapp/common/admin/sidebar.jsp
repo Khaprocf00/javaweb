@@ -136,6 +136,42 @@
 
                 </ul>
             </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Slider <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-slider?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Slider</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-slider?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Slider</p>
+                        </a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Product <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-product?page=1&maxPageItem=4&sortName=name&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Product</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-product?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Product</p>
+                        </a></li>
+
+                </ul>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

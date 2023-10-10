@@ -63,14 +63,18 @@ public class CategoryController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html");
 		CategoryModel category = FormUtil.toModel(CategoryModel.class, req);
 		String action = req.getParameter("action");
 		if (action != null && action.equals("insert")) {
 			boolean checkName = categoryServlet.checkName(category.getName());
 			req.setAttribute("checkName", checkName);
 			if (checkName) {
+				Long id = categoryServlet.insert(category);
+				category = categoryServlet.findById(id);
 				req.setAttribute("category", category);
-				categoryServlet.insert(category);
 				RequestDispatcher rd = req.getRequestDispatcher("/views/admin/category/add.jsp");
 				rd.forward(req, resp);
 

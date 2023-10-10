@@ -21,12 +21,14 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0"><a href="<c:url value='/admin-slider'/>">slider</a></h1>
+					<h1 class="m-0">
+						<a href="<c:url value='/admin-product'/>">product</a>
+					</h1>
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="#">slider</a></li>
+						<li class="breadcrumb-item"><a href="#">product</a></li>
 						<li class="breadcrumb-item active">List</li>
 					</ol>
 				</div>
@@ -39,7 +41,7 @@
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<form action="<c:url value='/admin-slider'/>" method="get"
+	<form action="<c:url value='/admin-product'/>" method="get"
 		id="formSubmit">
 		<section class="content">
 			<section class="ftco-section">
@@ -50,33 +52,53 @@
 								<table class="table">
 									<thead class="thead-primary">
 										<tr>
-											<th>&nbsp;</th>
+											<th>Sku</th>
+											<th>image</th>
 											<th>Name</th>
-											<th>Code</th>
+											<th>price</th>
+											<th>discount</th>
+											<th>category</th>
+											<th>brand</th>
+											<th>slider</th>
+											<th>tag</th>
 											<th>&nbsp;</th>
 										</tr>
 									</thead>
 									<tbody>
 										<c:forEach var="item" items="${model.listResult}">
 											<tr class="alert" role="alert">
-												<td><label class="checkbox-wrap checkbox-primary">
-														<input type="checkbox" checked> <span
-														class="checkmark"></span>
-												</label></td>
-												<td>${item.name}</td>
-												<td>${item.image}</td>
+												<td>${item.sku}</td>
 												<td>
-													<a href="<c:url value='/admin-slider?action=delete&id=${item.id}'/>" >
-														<button type="button" class="btn btn-danger" >
+													<div class="img"
+														style="background-image: url(<c:url value='/uploads/product/${item.imagePath}'/> );"></div>
+												</td>
+												<td>${item.name}</td>
+												<td>${item.price}</td>
+												<td>${item.discount}</td>
+												<td>${item.categoryId}</td>
+												<td>${item.brandId}</td>
+												<td>${item.sliderId}</td>
+												<td>${item.tagId}</td>
+												<td >
+													<div class="d-flex align-items-center">
+														<a
+													href="<c:url value='/admin-product?action=delete&id=${item.id}'/>">
+														<button type="button" class="btn btn-danger mr-2">
 															<span aria-hidden="true"><i class="fa fa-close"></i></span>
 														</button>
-													</a>
-													<a href="<c:url value='/admin-slider?action=edit&id=${item.id}' />">
-														<button type="button" class="btn btn-primary mr-2" >
+												</a> <a
+													href="<c:url value='/admin-product?action=edit&id=${item.id}' />">
+														<button type="button" class="btn btn-primary mr-2">
 															<span aria-hidden="true"><i
 																class="fa-solid fa-pen-to-square"></i></span>
 														</button>
-													</a>
+												</a><a
+													href="<c:url value='/admin-product-detail?productId=${item.id}' />">
+														<button type="button" class="btn btn-primary mr-2">
+															<span aria-hidden="true">Detail</span>
+														</button>
+												</a>
+													</div>
 												</td>
 											</tr>
 										</c:forEach>
@@ -97,12 +119,21 @@
 			</section>
 		</section>
 	</form>
-	 <script type="text/javascript">
-			var currentPage = ${model.page};
-			var totalPage = ${model.totalPage};
-			var limit = ${model.maxPageItem};
-			var sortName = "${model.sortName}";
-			var sortBy = "${model.sortBy}";
+	<script type="text/javascript">
+		var currentPage = $
+		{
+			model.page
+		};
+		var totalPage = $
+		{
+			model.totalPage
+		};
+		var limit = $
+		{
+			model.maxPageItem
+		};
+		var sortName = "${model.sortName}";
+		var sortBy = "${model.sortBy}";
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({
 				totalPages : totalPage,
@@ -119,7 +150,7 @@
 				}
 			});
 		});
-	</script> 
+	</script>
 
 </body>
 </html>

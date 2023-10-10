@@ -63,6 +63,8 @@ public class SizeController extends HttpServlet{
 		SizeModel size = FormUtil.toModel(SizeModel.class, req);
 		String action = req.getParameter("action");
 		if(action != null && action.equals("insert")) {
+			String x = req.getParameter("text");
+			req.setAttribute("text", x);
 			boolean checkName = sizeService.checkName(size.getName());
 			req.setAttribute("checkName", checkName);
 			if(checkName) {

@@ -80,6 +80,8 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 					statement.setString(index, (String) parameter);
 				} else if (parameters[i] instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp) parameter);
+				}else if (parameters[i] instanceof Double) {
+					statement.setDouble(index, (Double) parameter);
 				}
 			}
 		} catch (SQLException e) {

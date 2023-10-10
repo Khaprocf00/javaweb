@@ -16,7 +16,7 @@ public class BaseModel<T> {
 	private Integer maxPageItem = 4;
 	private Integer totalPage;
 	private Integer totalItem;
-	private String sortName = "name";
+	private String sortName = "id";
 	private String sortBy = "DESC";
 	public String getSortName() {
 		return sortName;
