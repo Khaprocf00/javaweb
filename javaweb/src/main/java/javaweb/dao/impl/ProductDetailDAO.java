@@ -31,7 +31,7 @@ public class ProductDetailDAO extends AbstractDAO<ProductDetailModel> implements
 	public List<ProductDetailModel> findAllPage(Pageble pageble) {
 		StringBuilder sql = new StringBuilder("select * from product_detail ");
 		if (pageble.getSorter() != null) {
-			sql.append(" order by " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + " ");
+			sql.append(" order by product_id " + pageble.getSorter().getSortBy() + " ");
 		}
 		if (pageble.getOffset() != null && pageble.getLimit() != null) {
 			sql.append("limit ?,?");
@@ -45,7 +45,7 @@ public class ProductDetailDAO extends AbstractDAO<ProductDetailModel> implements
 	public List<ProductDetailModel> findAllPageById(Pageble pageble,Long productId) {
 		StringBuilder sql = new StringBuilder("select * from product_detail where product_id = ? ");
 		if (pageble.getSorter() != null) {
-			sql.append(" order by " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + " ");
+			sql.append(" order by product_id " + pageble.getSorter().getSortBy() + " ");
 		}
 		if (pageble.getOffset() != null && pageble.getLimit() != null) {
 			sql.append("limit ?,?");

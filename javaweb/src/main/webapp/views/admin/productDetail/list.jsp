@@ -22,7 +22,7 @@
 			<div class="row mb-2">
 				<div class="col-sm-6">
 					<h1 class="m-0">
-						<a href="<c:url value='/admin-productDetail'/>">productDetail</a>
+						<a href="<c:url value='/admin-product-detail'/>">productDetail</a>
 					</h1>
 				</div>
 				<!-- /.col -->
@@ -41,7 +41,7 @@
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<form action="<c:url value='/admin-productDetail'/>" method="get"
+	<form action="<c:url value='/admin-product-detail'/>" method="get"
 		id="formSubmit">
 		<section class="content">
 			<section class="ftco-section">

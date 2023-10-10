@@ -172,6 +172,23 @@
 
                 </ul>
             </li>
+            <li class="nav-item "><a href="#" class="nav-link active"> <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Product Detail <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"><a
+                            href="<c:url value = '/admin-product-detail?page=1&maxPageItem=4&sortName=product_id&sortBy=desc'/>"
+                            class="nav-link active"> <i class="far fa-circle nav-icon"></i>
+                            <p>List Product Detail</p>
+                        </a></li>
+                    <li class="nav-item"><a href="<c:url value = '/admin-product-detail?action=insert'/>" class="nav-link"> <i
+                                class="far fa-circle nav-icon"></i>
+                            <p>Add Product Detail</p>
+                        </a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
