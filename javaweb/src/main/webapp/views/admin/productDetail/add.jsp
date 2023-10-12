@@ -36,9 +36,9 @@
 		<form action="" method="POST">
 			<div class="form-group d-flex">
 				<div class="mr-3">
-					<label for="product">Choose Slider</label> <select id="product"
+					<label for="product">Choose product</label> <select id="product"
 						name="productId">
-						<option value="">--Choose slider--</option>
+						<option value="">--Choose product--</option>
 						<c:forEach var="item" items="${product}">
 							<option
 								<c:if test = "${productDetail.productId == item.id }">selected="selected"</c:if>

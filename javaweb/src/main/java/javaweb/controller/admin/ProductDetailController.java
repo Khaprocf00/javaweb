@@ -72,6 +72,7 @@ public class ProductDetailController extends HttpServlet {
 				productDetail.setListResult(productDetailService.findAllById(productDetail.getProductId()));
 				productDetail.setListResult(productDetailService.findAllPageById(pageble, productDetail.getProductId()));
 				productDetail.setTotalItem(productDetailService.totalItemInTableById(productDetail.getProductId()));
+				req.setAttribute("productId", productDetail.getProductId());
 			} else {
 				productDetail.setListResult(productDetailService.findAll());
 				productDetail.setListResult(productDetailService.findAllPage(pageble));

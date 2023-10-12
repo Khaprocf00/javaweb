@@ -36,9 +36,9 @@
 		<form action="" method="POST">
 			<div class="form-group d-flex">
 				<div class="mr-3">
-					<label for="product">Choose Slider</label> <select id="product"
+					<label for="product">Choose product</label> <select id="product"
 						name="productId">
-						<option value="">--Choose slider--</option>
+						<option value="">--Choose product--</option>
 						<c:forEach var="item" items="${product}">
 							<option
 								<c:if test = "${productDetail.productId == item.id }">selected="selected"</c:if>
@@ -84,50 +84,7 @@
 						placeholder="Enter qty productDetail">
 				</div>
 			</div>
-			<%-- <div class="form-group">
-				<div class="mr-5">
-					<label for="qty">Qty productDetail</label> <input type="text"
-						name="qty"
-						value="<c:if test='${productDetail != null}'>${productDetail.qty}</c:if>"
-						class="form-control" id="qty"
-						placeholder="Enter qty productDetail">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="color">Choose Product</label> <select id="color"
-					name="colorId">
-					<option value="">--Choose product--</option>
-					<c:forEach var="item" items="${color}">
-						<option
-							<c:if test = "${productDetail.sliderId == item.id }">selected="selected"</c:if>
-							value="${item.id}">${item.name}</option>
-					</c:forEach>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="product">Choose Slider</label> <select id="product"
-					name="productId">
-					<option value="">--Choose slider--</option>
-					<c:forEach var="item" items="${product}">
-						<option
-							<c:if test = "${productDetail.sliderId == item.id }">selected="selected"</c:if>
-							value="${item.id}">${item.name}</option>
-					</c:forEach>
-				</select>
-			</div> 
-
-			<div class="form-group">
-				<label for="size">Choose Slider</label> <select id="size"
-					name="sizeId">
-					<option value="">--Choose size--</option>
-					<c:forEach var="item" items="${size}">
-						<option
-							<c:if test = "${productDetail.sliderId == item.id }">selected="selected"</c:if>
-							value="${item.id}">${item.name}</option>
-					</c:forEach>
-				</select>
-			</div> --%>
+			
 
 			<button type="submit" class="btn btn-primary">Edit</button>
 			<c:if test="${checkName == false}">

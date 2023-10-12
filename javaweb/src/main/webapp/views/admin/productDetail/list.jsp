@@ -90,6 +90,9 @@
 							</div>
 							<div class="d-flex flex-row-reverse">
 								<ul class="pagination" id="pagination"></ul>
+								<c:if test="${productId != null }">
+								<input type="hidden" value="${productId}" name="productId" id="productId" />
+								</c:if>
 								<input type="hidden" value="" name="page" id="page" /> <input
 									type="hidden" value="" name="maxPageItem" id="maxPageItem" />
 								<input type="hidden" value="" name="sortName" id="sortName">
